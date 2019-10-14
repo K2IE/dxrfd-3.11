@@ -1,0 +1,13 @@
+[Unit]
+Description=dxrfd XRF Reflector
+After=syslog.target network-online.target
+
+[Service]
+User=dxrfd
+Group=dxrfd
+Type=simple
+ExecStart=/usr/local/bin/dxrfd /usr/local/etc/dxrfd/dxrfd.cfg /var/log/dxrfd/dxrfd.log
+ExecStartPost=/bin/sh -c '/bin/sleep 5; /usr/local/bin/link_up.sh'
+
+[Install]
+WantedBy=multi-user.target
