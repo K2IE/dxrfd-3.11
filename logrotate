@@ -1,0 +1,9 @@
+/var/log/dxrfd/dxrfd.log {
+   daily
+   copytruncate
+   missingok
+   rotate 14
+   compress
+   delaycompress
+   notifempty
+}
